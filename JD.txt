@@ -1,0 +1,40 @@
+
+Job Title: Junior AI/ML Engineer
+Location: Remote / Colombo, Sri Lanka
+Job Type: Internship / Entry-Level
+Department: Artificial Intelligence & Data Science
+Company: TechNova AI Labs
+
+Job Summary
+We are looking for a passionate and motivated Junior AI/ML Engineer to join our R&D team. You will work on real-world projects involving machine learning, data pipelines, and natural language processing. This is a great opportunity to grow with a fast-paced AI team and develop your skills in AI product development.
+
+Key Responsibilities
+- Assist in building and improving machine learning models for customer-facing products.
+- Work on data pipelines and preprocessing for AI workflows (ETL, cleaning, transformation).
+- Contribute to chatbot and NLP applications.
+- Collaborate with full-stack developers to integrate ML models with web applications.
+- Document code, models, and experiments.
+- Research new tools and technologies in GenAI, LLMs, and MLOps.
+
+Required Skills & Qualifications
+- Pursuing or recently completed a BSc in AI, Data Science, or related field.
+- Experience with Python and machine learning frameworks (scikit-learn, TensorFlow, or PyTorch).
+- Familiarity with Natural Language Processing (NLP) and chatbot development.
+- Hands-on with React, MongoDB, Flask, or similar web technologies.
+- Knowledge of SQL or NoSQL databases (MySQL, MongoDB).
+- Familiar with Git, API tools (e.g., Postman), and version control.
+
+Preferred
+- Experience with LLMs (BERT, GPT) or fine-tuning models.
+- Participation in hackathons, coding challenges (e.g., IEEE Xtreme, Hult Prize).
+- Knowledge of AWS or cloud platforms (S3, EC2, etc.).
+
+Soft Skills
+- Good communication and presentation skills.
+- Team collaboration and problem-solving mindset.
+- Eagerness to learn and apply AI to real-world use cases.
+
+What We Offer
+- Flexible work hours and remote-first culture.
+- Mentorship and training in AI R&D.
+- Opportunity to work on impactful real-world projects in GenAI, healthcare, and education.
