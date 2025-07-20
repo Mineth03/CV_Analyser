@@ -37,18 +37,20 @@ function App() {
   const handleSendMessage = async () => {
     if (!question) return;
 
-    const newMessage = { type: 'user', text: question };
+    const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const newMessage = { type: 'user', text: question, time: timestamp };
     setChatHistory((prev) => [...prev, newMessage]);
     setQuestion('');
     setLoading(true);
 
     try {
       const res = await axios.post('http://localhost:8000/ask', { question });
-      const botMessage = { type: 'bot', text: res.data.answer };
+      const botTimestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const botMessage = { type: 'bot', text: res.data.answer, time: botTimestamp };
       setChatHistory((prev) => [...prev, botMessage]);
     } catch (error) {
       console.error('Failed to get answer:', error);
-      const errorMessage = { type: 'bot', text: 'Error fetching answer.' };
+      const errorMessage = { type: 'bot', text: 'Error fetching answer.', time: timestamp };
       setChatHistory((prev) => [...prev, errorMessage]);
     } finally {
       setLoading(false);
@@ -63,7 +65,6 @@ function App() {
 
   return (
     <div className="h-screen flex bg-black text-white font-sans">
-      {/* Left Panel - Upload Section */}
       <div className="w-1/3 bg-gray-900 p-6 flex flex-col justify-center space-y-4 border-r border-gray-700">
         <h2 className="text-2xl font-bold text-center mb-4 text-[#1DCD9F]">Upload CV & JD</h2>
 
@@ -88,26 +89,23 @@ function App() {
         </button>
       </div>
 
-      {/* Right Panel - Chat Section */}
       <div className="w-2/3 flex flex-col bg-[#222222]">
         <div className="p-4 border-b border-gray-700 text-center text-2xl font-bold text-[#1DCD9F]">
           CV & JD Analyser Chat
         </div>
 
-        <div
-          ref={chatBoxRef}
-          className="flex-1 overflow-y-auto p-4 space-y-2 bg-gray-800"
-        >
+        <div ref={chatBoxRef} className="flex-1 overflow-y-auto p-4 space-y-2 bg-gray-800">
           {chatHistory.map((msg, index) => (
             <div
               key={index}
-              className={`p-2 rounded max-w-xs ${
+              className={`p-2 rounded max-w-xs animate-fadeIn ${
                 msg.type === 'user'
                   ? 'bg-[#1DCD9F] text-black self-end ml-auto'
                   : 'bg-[#169976] text-white self-start mr-auto'
               }`}
             >
-              {msg.text}
+              <p>{msg.text}</p>
+              <p className="text-xs text-gray-300 text-right mt-1">{msg.time}</p>
             </div>
           ))}
         </div>
